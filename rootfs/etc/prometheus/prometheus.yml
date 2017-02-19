@@ -17,3 +17,9 @@ scrape_configs:
       - names: ['tasks.drove-mon-prometheus']
         type: A
         port: 9090
+  - job_name: 'docker-exporter'
+      dns_sd_configs:
+      - names:
+        - 'tasks.docker-exporter'
+        type: 'A'
+        port: 4999
