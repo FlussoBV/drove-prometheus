@@ -14,7 +14,7 @@ CADVISOR_IMAGE=google/cadvisor:v0.24.1
 
 # PROMETHEUS
 PROM_SERVICE=${PREFIX}-prometheus
-PROM_IMAGE=prom/prometheus:v1.4.1
+PROM_IMAGE=caladreas/drove-prometheus
 
 # GRAFANA
 GRAFANA_SERVICE=${PREFIX}-grafana
@@ -108,9 +108,9 @@ else
         --label com.docker.stack.namespace=$NETWORK \
         --container-label com.docker.stack.namespace=$NETWORK \
         -p 9090:9090 \
+        $PROM_IMAGE \
         -config.file=/etc/prometheus/prometheus.yml \
-        -storage.local.path=/prometheus \
-        $PROM_IMAGE
+        -storage.local.path=/prometheus 
 fi
 ######################################
 ######################################
