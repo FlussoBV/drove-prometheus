@@ -2,7 +2,7 @@ global:
   scrape_interval: 5s
 
 scrape_configs:
-  - job_name: 'node'
+  - job_name: 'node-exporter'
     dns_sd_configs:
       - names: ['tasks.drove-mon-node-exporter']
         type: A
